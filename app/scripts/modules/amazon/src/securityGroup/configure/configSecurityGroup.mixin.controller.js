@@ -342,5 +342,9 @@ module(AMAZON_SECURITYGROUP_CONFIGURE_CONFIGSECURITYGROUP_MIXIN_CONTROLLER, [
       ModalWizard.markClean('Ingress');
       ModalWizard.markComplete('Ingress');
     };
+
+    ctrl.setIpObjects = value => {
+      console.log(JSON.stringify(value));
+    };
   },
 ]);
