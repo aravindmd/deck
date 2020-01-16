@@ -6,5 +6,5 @@ export const AWS_SECURITY_GROUP_ADDITIONAL_IP_RULES =
   'spinnaker.amazon.securityGroups.details.securityGroups.additionalIpRules.component';
 module(AWS_SECURITY_GROUP_ADDITIONAL_IP_RULES, []).component(
   'additionalIpRules',
-  react2angular(AdditionalIpRules, ['securityGroupDetails', 'onChange']),
+  react2angular(AdditionalIpRules, ['securityGroupDetails']),
 );
