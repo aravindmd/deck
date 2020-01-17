@@ -7,8 +7,8 @@ export interface IAdditionalIpRulesProps {
   securityGroupDetails: ISecurityGroupDetail;
 }
 
-@Overridable('aws.securityGroup.additional.ipRules')
-export class AdditionalIpRules extends React.Component<IAdditionalIpRulesProps> {
+@Overridable('aws.securityGroup.details.custom')
+export class SecurityGroupDetailsCustom extends React.Component<IAdditionalIpRulesProps> {
   public render(): any {
     return null;
   }
