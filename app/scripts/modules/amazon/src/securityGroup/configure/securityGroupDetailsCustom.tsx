@@ -5,6 +5,9 @@ import './nflx/additionalIpRules.nflx';
 
 export interface IAdditionalIpRulesProps {
   securityGroupDetails: ISecurityGroupDetail;
+  ctrl: any;
+  scope: any;
+  application: any;
 }
 
 @Overridable('aws.securityGroup.details.custom')

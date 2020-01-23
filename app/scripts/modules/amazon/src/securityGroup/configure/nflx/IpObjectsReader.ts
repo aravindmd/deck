@@ -6,6 +6,13 @@ export interface IIpObject {
   id: string;
 }
 
+export interface IIpObject1 {
+  name: string;
+  protocol: string;
+  startPort: string;
+  endPort: string;
+}
+
 const response: IIpObject[] = [
   { name: 'storage_platform_prod/us-west-1/private', id: '0AAF' },
   { name: 'build_studio_dmz_prod/us-west-2', id: '0AAG' },
