@@ -23,7 +23,6 @@ export interface IAdditionalIpRulesProps {
   securityGroupDetails: ISecurityGroupDetailNflx;
   ctrl: any;
   scope: any;
-  application: any;
 }
 
 function mapToIpObjects(ipRangeRules: IIPRangeRule[]): any {
@@ -98,6 +97,7 @@ export function IpObjectsForm(formProps: IAdditionalIpRulesProps & { values: { i
   const $scope = formProps.scope;
   function upsert() {
     const { isNew } = $scope.state;
+    const application = $scope.application;
     const group: any = securityGroupDetails;
     const command = {
       credentials: group.accountName,
@@ -119,7 +119,7 @@ export function IpObjectsForm(formProps: IAdditionalIpRulesProps & { values: { i
       (command as any).ipIngress = filterIpRulesFromIpObjects(group.ipRangeRules);
     }
     $scope.taskMonitor.submit(function() {
-      return SecurityGroupWriter.upsertSecurityGroup(command, formProps.application, isNew ? 'Create' : 'Update');
+      return SecurityGroupWriter.upsertSecurityGroup(command, application, isNew ? 'Create' : 'Update');
     });
   }
   formProps.ctrl.upsert = upsert;
